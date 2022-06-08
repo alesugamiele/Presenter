@@ -1,4 +1,3 @@
 Flask
 flask-seasurf
 flask-talisman
-gunicorn
