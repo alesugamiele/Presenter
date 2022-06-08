@@ -11,4 +11,5 @@ app_config: dict[str, str] = {
 	"presentations_images": "static/images",
 	"flask_host": "0.0.0.0",
 	"flask_port": 8989,
+	"refresh_time_sec": 2,
 }

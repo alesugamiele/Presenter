@@ -1,3 +1,4 @@
+from typing import Union
 import argparse
 import pickle
 import shutil
@@ -28,6 +29,8 @@ Talisman(app,
         "img-src": "'self'",
     }
 )
+
+_refresh_time: int = int(app_config["refresh_time_sec"]*1e3)
 
 def add_presentation(name: str) -> None:
     if name in get_presentations():
@@ -120,7 +123,8 @@ def watch():
                 f"{pres_name}.html"
             ),
             slides=slides,
-            presentation=pres_name
+            presentation=pres_name,
+            refresh_time=_refresh_time
         )
 
 @app.route("/host/", methods=["GET", "POST"])

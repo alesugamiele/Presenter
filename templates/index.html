@@ -2,6 +2,9 @@
 
 {% block content %}
 <center>
+  <a href="{{ url_for('host') }}">
+    <button type="button" class="btn btn-light mb-3 mt-3 btn-sm">I'm the Host</button>
+  </a>
   <h1 class="mb-3 mt-5">Choose a presentation to watch</h1>
   <div class="d-grid gap-2 col-6 mx-auto mt-5">
     {% for presentation in presentations %}

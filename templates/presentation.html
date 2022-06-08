@@ -35,7 +35,7 @@
     setTimeout(
       function send_data() {
         worker.postMessage(url+"||"+params);
-      }, 2000);
+      }, {{ refresh_time }});
   };
 </script>
 {% endblock %}
