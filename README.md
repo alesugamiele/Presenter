@@ -2,7 +2,7 @@
 Pilot your presentations with ease
 
 ## Description
-Presenter allows you to easily control presentations remotely with a minimal remote control style interface.
+Presenter allows you to easily control presentations remotely with a minimal remote control style interface.<br>
 The project was born from the need to present my slides in a comfortable and simple way for the high school exam.
 
 ## Usage
