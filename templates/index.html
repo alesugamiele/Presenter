@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+  <h1 class="mb-3 mt-5">Choose a presentation to watch</h1>
+  <div class="d-grid gap-2 col-6 mx-auto mt-5">
+    {% for presentation in presentations %}
+    <form method="post" action="{{ url_for('watch') }}">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="presentation" value="{{ presentation }}">
+      <button class="btn btn-primary mb-2" type="submit">{{ presentation }}</button>
+    </form>
+    {% endfor %}
+  </div>
+</center>
+{% endblock %}

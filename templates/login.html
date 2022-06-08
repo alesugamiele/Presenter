@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <center>
+    <form method="post" action="{{ url_for('host') }}">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      <div class="input-group mb-3 w-75 mt-5">
+        <span class="input-group-text" id="input_token">Token</span>
+        <input type="password" class="form-control" aria-describedby="input_token" name="token">
+      </div>
+      <select class="form-select mt-2 w-75" name="presentation">
+        <option selected>Presentation</option>
+        {% for presentation in presentations %}
+        <option value="{{ presentation }}">{{ presentation }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary w-75 mt-5">Start Presentation</button>
+    </form>
+  </center>
+</div>
+{% endblock %}
