@@ -6,7 +6,7 @@ Presenter allows you to easily control presentations remotely with a minimal rem
 The project was born from the need to present my slides in a comfortable and simple way for the high school exam.
 
 ## Usage
-First of all install the necessary dependencies:
+First of all install the necessary dependencies:<br>
 `$ pip3 install -r requirements.txt`
 
 For quick use with Flask use:
