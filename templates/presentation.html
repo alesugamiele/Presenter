@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="carousel_1" class="carousel slide" data-interval="false">
+  <div class="carousel-inner">
+    {% for slide in slides %}
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/'+presentation+'/'+slide) }}" class="d-block w-100">
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel_1" data-bs-slide="prev">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel_1" data-bs-slide="next">
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<script type="text/javascript">
+  var carousel = $(".carousel-item");
+  $(carousel).removeClass("active");
+  $(carousel[0]).addClass("active");
+  var _SEPARATOR = "||";
+  var url = "{{ url_for('status') }}";
+  var params = "presentation={{ presentation }}&_csrf_token={{ csrf_token() }}";
+  var worker = new Worker("{{ url_for('static', filename='js/change_slides.js') }}");
+
+  worker.postMessage(url+_SEPARATOR+params);
+  worker.onmessage = function(e) {
+    var slide_index = parseInt(e.data);
+    $(carousel).removeClass("active");
+    $(carousel[slide_index]).addClass("active");
+
+    setTimeout(
+      function send_data() {
+        worker.postMessage(url+"||"+params);
+      }, 2000);
+  };
+</script>
+{% endblock %}

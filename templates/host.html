@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+  <form method="post" action="{{ url_for('controller') }}">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="terminate">
+    <button type="submit" class="btn btn-danger btn-lg mt-5">Terminate</button>
+  </form>
+</center>
+<div class="container position-absolute translate-middle top-50 start-50">
+  <center>
+    <form style="display: inline-block;" method="post" action="{{ url_for('controller') }}">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="previous">
+      <button type="submit" class="btn btn-secondary btn-lg me-2">Previous</button>
+    </form>
+    <form style="display: inline-block;" method="post" action="{{ url_for('controller') }}">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="next">
+      <button type="submit" class="btn btn-success btn-lg">Next</button>
+    </form>
+  </center>
+</div>
+{% endblock %}
