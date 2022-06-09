@@ -1,7 +1,8 @@
+from typing import Union
 import os
 
 
-app_config: dict[str, str] = {
+app_config: dict[str, Union[str, int]] = {
 	# ----------------- Change this -----------------
 	"auth_token": "EQGw6oFdVqsiKiojZLWph8nWRzbfr0",
 	"secret_key": "TleEM9bQHPcGmB8BSzeWllwPAx745c",
