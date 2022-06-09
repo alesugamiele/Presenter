@@ -31,3 +31,5 @@ After that, you will be able to upload the presentation images to the created fo
 
 ## Manage a presentation
 After creating a presentation, you will have to use the auth token to start a presentation from the host page
+
+[](https://user-images.githubusercontent.com/78198739/172809648-39654655-3cfd-4e39-8226-566512ef6ae3.mp4)
